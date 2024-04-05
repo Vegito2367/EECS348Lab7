@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    hr {
+      margin: 0;
+      border: 0;
+      border-top: 1px solid black;
+    }
+
+    #emailbox {
+      cursor: pointer;
+    }
+
+
+    .meme {
+      animation: Imgonnadielaughing 1s infinite;
+    }
+
+    .crazycolors {
+      animation: crazyColors 1s infinite;
+    }
+
+    .helperText {
+      animation: helptext 0.75s infinite;
+    }
+
+    .bigtext{
+      animation: bigStuff 0.75s infinite;
+    }
+
+    @keyframes Imgonnadielaughing {
+      0% {
+        transform: rotate(0deg);
+        scale: 1;
+      }
+      50% {
+        transform: rotate(1440deg);
+        scale: 1.5;
+      }
+      100% {
+        transform: rotate(0deg);
+        scale: 1;
+      }
+      
+    }
+
+    @keyframes helptext {
+      0%{
+        scale: 1;
+      }
+      50%{
+        scale: 1.7;
+      }
+      100%{
+        scale: 1;
+      }
+    }
+
+    @keyframes bigStuff {
+      0%{
+        scale: 1;
+      }
+      50%{
+        scale: 1.3;
+      }
+      100%{
+        scale: 1;
+      }
+    }
+
+
+    @keyframes crazyColors {
+      0% {
+        background-color: red;
+      }
+      25% {
+        background-color: blue;
+      }
+      50% {
+        background-color: green;
+      }
+      75% {
+        background-color: yellow;
+      }
+      100% {
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body id="bodyTag" style="padding: 0; margin: 0; background-color: greenyellow;">
+  <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+    <div>
+      <p align="center" style="font-size: 70px; margin: 0 0 10px 0;">Tej Gumaste</p>
+      <p align="center" style="font-size: 30px; margin: 0;">Sophomore studying CS + Math</p>
+      <p align="center" style="font-size: 30px; margin: 0; color: blue;">University of Kansas</p>
+      <p id="emailbox" onclick="copyEmail()"  align="center" style="font-size: 15px; margin: 0;">tej.gumaste@ku.edu</p>
+      <p align="center" style="font-size: 15px; margin: 0;">Phone: 123-456-7890</p>
+    </div>
+    <div>
+      <img id="animation" onclick="startAnimation()" src="TejFunky.png" alt="KU" height="200px">
+    </div>
+  </div>
+  <hr style="margin-bottom: 10px;">
+
+  <div id="Allstuff">
+    <div style="display: flex; flex-direction: row; justify-content: center; column-gap: 50px;">
+      <div>
+        <div>
+          <p style="font-size: 50px; margin: 0; text-decoration: underline;">About Me</p><br>
+          <p style="font-size: 20px; margin: 0;">I'm a sophomore studying computer science and math at the University of Kansas. I'm quite fond of game development and traveling around the world. I'm from Dubai, UAE but I was born in India. I'm excited to travel around the US!</p><br>
+        </div>
+        <div>
+          <p style="font-size: 50px; margin: 0; text-decoration: underline;">Cool Projects</p><br>
+          <p style="font-size: 20px; margin: 0;">Tree: A game I made for HackUTD 2022 that is a farm simulator game focused on inculcating the idea of bio-diversity</p><br>
+          <p style="font-size: 20px; margin: 0;">Email Classifier: A small logistics regression model that I used to make an email spam/not spam classifier achieving an accuracy of 97.8%</p><br>
+          <p style="font-size: 20px; margin: 0;">Zer0: A 3d first person mobile parkour game that focuses on physics based movement options like wall running and grappling hooks and jetpacks.</p><br>
+          <p id="helperText" align="center" style="font-size: 20px; margin: 0;">Click the header illustration of me for a fun surprise</p>
+        </div>
+      </div>
+      <div>
+        <img src="TejPic.jpg" alt="Avatar" height="500px">
+      </div>
+    </div>
+    <br>
+    Here is one of my favorite songs:<br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/boRd0WoCemI?si=DcrjghOoCLX5_2tC&amp;start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>
+<script>
+  let counter = 0;
+  function copyEmail() {
+    let x = document.getElementById("emailbox");
+    navigator.clipboard.writeText(x.innerText);
+  }
+
+  function startAnimation() {
+
+    let x = document.getElementById("animation");
+    let b=document.getElementById("bodyTag");
+    let h=document.getElementById("helperText");
+    let a=document.getElementById("Allstuff");
+    h.innerHTML=(counter%2==1)?"Click the header illustration of me for a fun surprise":"Click the image again to make it go back to normal";
+    a.classList.toggle("bigtext");
+    b.classList.toggle("crazycolors");
+    x.classList.toggle("meme");
+    counter++;
+  }
+</script>

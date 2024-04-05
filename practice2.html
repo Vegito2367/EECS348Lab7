@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorful Paragraph</title>
+  <style>
+    #myParagraph {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Colorful Paragraph</h1>
+  <p id="myParagraph">This is a paragraph with some dummy text.</p>
+  <label for="redInput">Border Red:</label>
+  <input type="number" id="redInput" min="0" max="255">
+  <br>
+  <label for="greenInput">Border Green:</label>
+  <input type="number" id="greenInput" min="0" max="255">
+  <br>
+  <label for="blueInput">Border Blue:</label>
+  <input type="number" id="blueInput" min="0" max="255">
+  <br>
+  <label for="redInput">Text Red:</label>
+  <input type="number" id="TextredInput" min="0" max="255">
+  <br>
+  <label for="greenInput">Text Green:</label>
+  <input type="number" id="TextgreenInput" min="0" max="255">
+  <br>
+  <label for="blueInput">Text Blue:</label>
+  <input type="number" id="TextblueInput" min="0" max="255">
+  <br>
+  <label for="borderWidthInput">Enter border width:</label>
+  <input type="number" id="borderWidthInput">
+  <br>
+  <button onclick="changeColorAndBorder()">Apply</button>
+
+  <script>
+    function changeColorAndBorder() {
+      var redInput = document.getElementById("redInput").value;
+      var greenInput = document.getElementById("greenInput").value;
+      var blueInput = document.getElementById("blueInput").value;
+      var borderWidthInput = document.getElementById("borderWidthInput").value;
+      let TextredInput = document.getElementById("TextredInput").value;
+      let TextgreenInput = document.getElementById("TextgreenInput").value;
+      let TextblueInput = document.getElementById("TextblueInput").value;
+
+      var colorInput = "rgb(" + redInput + ", " + greenInput + ", " + blueInput + ")";
+      var TextcolorInput = "rgb(" + TextredInput + ", " + TextgreenInput + ", " + TextblueInput + ")";
+      var myParagraph = document.getElementById("myParagraph");
+      myParagraph.style.color = TextcolorInput;
+      myParagraph.style.borderColor = colorInput;
+      myParagraph.style.borderWidth = borderWidthInput + "px";
+    }
+  </script>
+</body>
+</html>
