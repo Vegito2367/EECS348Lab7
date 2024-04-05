@@ -20,7 +20,7 @@
   function checkIfEqual() {
     let password = document.getElementById("password").value;
     let confirmPassword = document.getElementById("confirmPassword").value;
-    if(password.length < 8) {
+    if(password.length < 8 || confirmPassword.length < 8) {
       alert("Password must be at least 8 characters long!");
     }
     else{
